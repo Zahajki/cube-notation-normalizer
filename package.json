@@ -1,0 +1,25 @@
+{
+  "name": "cube-notation-normalizer",
+  "version": "0.1.0",
+  "description": "Parse and \"normalize\" Rubik's Cube algorithm notations",
+  "main": "index.js",
+  "scripts": {
+    "build": "pegjs notation.pegjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zahajki",
+  "license": "MIT",
+  "keywords": [
+    "rubik's cube",
+    "notation",
+    "algorithm",
+    "parse",
+    "normalize"
+  ],
+  "devDependencies": {
+    "pegjs": "^0.10.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
