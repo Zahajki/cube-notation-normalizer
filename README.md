@@ -28,6 +28,18 @@ normalize(ugly, {
 ```
 
 ## Supported syntax and features
+#### Face turns, slice turns and cube rotations
+```js
+normalize("R U F L D B M E S x y z");
+// => "R U F L D B M E S r u f l d b x y z"
+```
+
+#### Double layer turns
+```js
+normalize("r Uw");
+// => "r u"
+```
+
 #### Whitespaces and comments
 ```js
 normalize(`
@@ -100,7 +112,7 @@ Object with following format. All properties are optional.
 ```
 
 ##### separator
-Separator string inserted between each turn. (default `' '`)
+Separator string which will be inserted between each turns. (default `' '`)
 
 ##### useModifiers
 If `true`, returned notation includes modifier letters `'` and `2`. If `false`, inverted turns and half turns are represented as repetition. (default `true`)
@@ -118,6 +130,7 @@ normalize("r E", { uniformCenterMoves: 'rotation' });
 normalize("r y", { uniformCenterMoves: 'slice' });
 // => "R M' U D' E'"
 ```
+Note: This center move conversion is only valid for 3x3x3 cube.
 
 ##### invert
 If `true`, algorithm will be inverted.
@@ -125,6 +138,7 @@ If `true`, algorithm will be inverted.
 normalize("R U R' U'", { invert: true });
 // => "U R U' R'"
 ```
+This makes same result with `normalize("(" + alg + ")'")`, but using this option will make messages of possible errors more clear especially for error location in algorithm string.
 
 ### normalize.SyntaxError
 [PEG.js](https://pegjs.org/) error class thrown from the parser.

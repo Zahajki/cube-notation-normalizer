@@ -1,6 +1,6 @@
 {
   "name": "cube-notation-normalizer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Parse and \"normalize\" Rubik's Cube algorithm notations",
   "main": "index.js",
   "scripts": {
