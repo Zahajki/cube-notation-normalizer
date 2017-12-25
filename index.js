@@ -36,6 +36,7 @@ var MODIFIER = [, '', '2', "'"]
 
 function toHumanReadable (sequence, separator) {
   var moves = sequence.match(/(.)\1*/g)
+  if (moves == null) return ''
   return moves
     .map(move => move.charAt(0) + MODIFIER[move.length])
     .join(separator)

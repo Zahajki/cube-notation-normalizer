@@ -1,8 +1,9 @@
 var repeat = require('lodash/repeat')
 
 function invert (sequence) {
-  return sequence
-    .match(/(.)\1*/g)
+  var chunked = sequence.match(/(.)\1*/g)
+  if (chunked == null) return ''
+  return chunked
     .reverse()
     .join('').replace(/(.)/g, '$1$1$1')
 }

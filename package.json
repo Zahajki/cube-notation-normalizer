@@ -1,13 +1,18 @@
 {
   "name": "cube-notation-normalizer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Parse and \"normalize\" Rubik's Cube algorithm notations",
   "main": "index.js",
   "scripts": {
+    "prepublish": "pegjs notation.pegjs",
     "build": "pegjs notation.pegjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Zahajki",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zahajki/cube-notation-normalizer.git"
+  },
   "license": "MIT",
   "keywords": [
     "rubik's cube",
