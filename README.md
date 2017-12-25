@@ -27,7 +27,7 @@ normalize(ugly, {
 // => "RMMMURRRUUURRRMFRFFF"
 ```
 
-## Supported syntax and fearures
+## Supported syntax and features
 #### Whitespaces and comments
 ```js
 normalize(`
@@ -84,7 +84,7 @@ normalize("R L R");
 ```
 
 ## API
-### normalize(algorism[, options])
+### normalize(algorithm[, options])
 #### algorithm
 Algorithm notation string to normalize.
 
