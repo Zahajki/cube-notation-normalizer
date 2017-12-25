@@ -26,6 +26,7 @@ normalize(ugly, {
 });
 // => "RMMMURRRUUURRRMFRFFF"
 ```
+With the latter options, result will contain only `R`, `U`, `F`, `L`, `D`, `B`, `M`, `E` and `S` letters and not contain any whitespaces nor modifiers. This will be very handy for programs. If you prefer, you can also choose `x`, `y` and `z` instead of `M`, `E` and `S`.
 
 ## Supported syntax and features
 #### Face turns, slice turns and cube rotations
@@ -43,7 +44,7 @@ normalize("r Uw");
 #### Whitespaces and comments
 ```js
 normalize(`
-R        U
+R        (U)
 R'U' // sexy move
 /*
 R' F R F' <- sledgehammer
