@@ -1,5 +1,6 @@
 # cube-notation-normalizer
 [![Build Status](https://travis-ci.org/Zahajki/cube-notation-normalizer.svg?branch=master)](https://travis-ci.org/Zahajki/cube-notation-normalizer)
+[![Coverage Status](https://coveralls.io/repos/github/Zahajki/cube-notation-normalizer/badge.svg?branch=master)](https://coveralls.io/github/Zahajki/cube-notation-normalizer?branch=master)
 [![npm version](https://badge.fury.io/js/cube-notation-normalizer.svg)](https://badge.fury.io/js/cube-notation-normalizer)
 
 There are several number of rubik's cube related programs on npm, and many of them has their own functions to parse algorithms. Unfortunately, their functions only support limited syntax of algorithm notation.
