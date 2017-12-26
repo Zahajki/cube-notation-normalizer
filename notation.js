@@ -157,7 +157,7 @@ function peg$parse(input, options) {
       peg$c13 = peg$literalExpectation(":", false),
       peg$c14 = "]",
       peg$c15 = peg$literalExpectation("]", false),
-      peg$c16 = function(a, b) {return helper.conjugate(a, b) },
+      peg$c16 = function(a, b) { return helper.conjugate(a, b) },
       peg$c17 = ",",
       peg$c18 = peg$literalExpectation(",", false),
       peg$c19 = function(a, b) { return helper.commutator(a, b) },

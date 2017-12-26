@@ -1,9 +1,7 @@
 var repeat = require('lodash/repeat')
 
 function invert (sequence) {
-  var chunked = sequence.match(/(.)\1*/g)
-  if (chunked == null) return ''
-  return chunked
+  return chop(sequence)
     .reverse()
     .join('').replace(/(.)/g, '$1$1$1')
 }
@@ -31,7 +29,13 @@ function operate (sequence, operators) {
   return result
 }
 
+function chop (sequence) {
+  var chopped = sequence.match(/(.)\1*/g)
+  return chopped === null ? [] : chopped
+}
+
 module.exports.invert = invert
 module.exports.conjugate = conjugate
 module.exports.commutator = commutator
 module.exports.operate = operate
+module.exports.chop = chop

@@ -17,7 +17,7 @@ Group
   / Face
 
 Conjugate
-  = "[" a:Alg ":" b:Alg "]" {return helper.conjugate(a, b) }
+  = "[" a:Alg ":" b:Alg "]" { return helper.conjugate(a, b) }
   // / "<" a:Alg ";" b:Alg ">" {return helper.conjugate(a, b) }
 
 Commutator

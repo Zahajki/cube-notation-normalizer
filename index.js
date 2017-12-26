@@ -22,48 +22,47 @@ function normalize (notation, options) {
   
   sequence = shrink(sequence)
 
-  if (options.useModifiers)
+  if (options.useModifiers) {
     return toHumanReadable(sequence, options.separator)
-  else {
-    if (!options.separator)
+  } else {
+    if (!options.separator) {
       return sequence
-    else
+    } else { 
       return sequence.split('').join(options.separator)
+    }
   }
 }
 
 var MODIFIER = [, '', '2', "'"]
 
 function toHumanReadable (sequence, separator) {
-  var moves = sequence.match(/(.)\1*/g)
-  if (moves == null) return ''
-  return moves
+  return helper.chop(sequence)
     .map(move => move.charAt(0) + MODIFIER[move.length])
     .join(separator)
 }
 
 var CENTER_MOVES_REPLACEMENT = {
   rotation: [
-    { pat: /r/g, rep: parse("x L'") },
-    { pat: /l/g, rep: parse("x' R") },
-    { pat: /u/g, rep: parse("y D") },
-    { pat: /d/g, rep: parse("y' U") },
-    { pat: /f/g, rep: parse("z B") },
-    { pat: /b/g, rep: parse("z' F") },
-    { pat: /M/g, rep: parse("x R L'") },
-    { pat: /E/g, rep: parse("y' U D'") },
-    { pat: /S/g, rep: parse("z F' B") },
+    { pat: /r/g, rep: parse(" x  L ") },
+    { pat: /l/g, rep: parse(" x' R ") },
+    { pat: /u/g, rep: parse(" y  D ") },
+    { pat: /d/g, rep: parse(" y' U ") },
+    { pat: /f/g, rep: parse(" z  B ") },
+    { pat: /b/g, rep: parse(" z' F ") },
+    { pat: /M/g, rep: parse(" x' R  L' ") },
+    { pat: /E/g, rep: parse(" y' U  D' ") },
+    { pat: /S/g, rep: parse(" z  F' B  ") }
   ],
   slice: [
-    { pat: /r/g, rep: parse("R M'") },
-    { pat: /l/g, rep: parse("L M") },
-    { pat: /u/g, rep: parse("U E'") },
-    { pat: /d/g, rep: parse("D E") },
-    { pat: /f/g, rep: parse("F S") },
-    { pat: /b/g, rep: parse("B S'") },
-    { pat: /x/g, rep: parse("R M' L'") },
-    { pat: /y/g, rep: parse("U E' D'") },
-    { pat: /z/g, rep: parse("F S B'") },
+    { pat: /r/g, rep: parse(" R M' ") },
+    { pat: /l/g, rep: parse(" L M  ") },
+    { pat: /u/g, rep: parse(" U E' ") },
+    { pat: /d/g, rep: parse(" D E  ") },
+    { pat: /f/g, rep: parse(" F S  ") },
+    { pat: /b/g, rep: parse(" B S' ") },
+    { pat: /x/g, rep: parse(" R M' L' ") },
+    { pat: /y/g, rep: parse(" U E' D' ") },
+    { pat: /z/g, rep: parse(" F S  B' ") }
   ]
 }
 
