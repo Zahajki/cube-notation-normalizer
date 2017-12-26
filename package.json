@@ -6,9 +6,10 @@
   "types": "types/index.d.ts",
   "scripts": {
     "lint": "eslint **/*.js",
-    "prepublish": "pegjs notation.pegjs",
+    "prepublish": "npm run build",
     "build": "pegjs notation.pegjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "cover": "jest --coverage"
   },
   "author": "Zahajki",
   "repository": {
@@ -31,6 +32,7 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.0.4",
     "pegjs": "^0.10.0"
   },
   "dependencies": {

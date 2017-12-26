@@ -4,5 +4,8 @@
     "yoda":"off",
     "quotes":"off",
     "object-property-newline":"warn"
+  },
+  "env": {
+    "jest": true
   }
 }

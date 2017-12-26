@@ -1,3 +1,5 @@
 **/*.pegjs
 .eslintignore
 .eslintrc
+/tests/
+/coverage/
