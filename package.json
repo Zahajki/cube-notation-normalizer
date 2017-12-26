@@ -9,7 +9,8 @@
     "prepublish": "npm run build",
     "build": "pegjs notation.pegjs",
     "test": "jest",
-    "cover": "jest --coverage"
+    "cover": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "author": "Zahajki",
   "repository": {
@@ -26,6 +27,7 @@
     "normalize"
   ],
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "eslint": "^4.14.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",

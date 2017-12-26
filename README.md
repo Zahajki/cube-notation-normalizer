@@ -1,4 +1,7 @@
 # cube-notation-normalizer
+[![Build Status](https://travis-ci.org/Zahajki/cube-notation-normalizer.svg?branch=master)](https://travis-ci.org/Zahajki/cube-notation-normalizer)
+[![npm version](https://badge.fury.io/js/cube-notation-normalizer.svg)](https://badge.fury.io/js/cube-notation-normalizer)
+
 There are several number of rubik's cube related programs on npm, and many of them has their own functions to parse algorithms. Unfortunately, their functions only support limited syntax of algorithm notation.
 
 This library intends to be a base for this kind of programs to support broad syntax of algorithm notation.
@@ -28,7 +31,9 @@ normalize(ugly, {
 });
 // => "RMMMURRRUUURRRMFRFFF"
 ```
-With the latter options, result will contain only `R`, `U`, `F`, `L`, `D`, `B`, `M`, `E` and `S` letters and not contain any whitespaces nor modifiers. This is highly well-formatted and will be very handy for programs. If you prefer, you also can choose `x`, `y` and `z` instead of `M`, `E` and `S`.
+With the latter options, result will contain only `R`, `U`, `F`, `L`, `D`, `B`, `M`, `E` and `S` letters and not contain any whitespaces nor modifiers. This is highly well-formatted and will be very handy for programs. Especially, `.split('')` or `.match(/(.)\1*/g)` may be useful.
+
+If you prefer, you also can choose `x`, `y` and `z` instead of `M`, `E` and `S`.
 
 ## Supported syntax and features
 #### Face turns, slice turns and cube rotations
