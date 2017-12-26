@@ -3,7 +3,9 @@
   "version": "0.2.2",
   "description": "Parse and \"normalize\" Rubik's Cube algorithm notations",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "scripts": {
+    "lint": "eslint **/*.js",
     "prepublish": "pegjs notation.pegjs",
     "build": "pegjs notation.pegjs",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +25,12 @@
     "normalize"
   ],
   "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "pegjs": "^0.10.0"
   },
   "dependencies": {

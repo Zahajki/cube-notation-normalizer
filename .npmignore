@@ -1,1 +1,3 @@
 **/*.pegjs
+.eslintignore
+.eslintrc

@@ -15,16 +15,16 @@ function commutator (a, b) {
 }
 
 function operate (sequence, operators) {
-  if (operators.length == 0)
-    return sequence
-  
+  if (operators.length === 0) return sequence
+
   var result = sequence
   for (var i = 0; i < operators.length; i++) {
     var operator = operators[i]
-    if (0 < operator)
+    if (0 < operator) {
       result = repeat(result, operator)
-    else
+    } else {
       result = invert(result)
+    }
   }
   return result
 }

@@ -1,0 +1,8 @@
+{
+  "extends": "standard",
+  "rules": {
+    "yoda":"off",
+    "quotes":"off",
+    "object-property-newline":"warn"
+  }
+}

@@ -8,18 +8,20 @@ function normalize (notation, options) {
   options = defaults(options, {
     separator: ' ',
     useModifiers: true,
-    uniformCenterMoves: false,  // false | 'rotation' | 'slice'
+    uniformCenterMoves: false, // false | 'rotation' | 'slice'
     invert: false
   })
 
   var sequence = parse(notation)
 
-  if (options.invert)
+  if (options.invert) {
     sequence = helper.invert(sequence)
-  
-  if (options.uniformCenterMoves)
+  }
+
+  if (options.uniformCenterMoves) {
     sequence = convertCenterMoves(sequence, options.uniformCenterMoves)
-  
+  }
+
   sequence = shrink(sequence)
 
   if (options.useModifiers) {
@@ -27,13 +29,13 @@ function normalize (notation, options) {
   } else {
     if (!options.separator) {
       return sequence
-    } else { 
+    } else {
       return sequence.split('').join(options.separator)
     }
   }
 }
 
-var MODIFIER = [, '', '2', "'"]
+var MODIFIER = [undefined, '', '2', "'"]
 
 function toHumanReadable (sequence, separator) {
   return helper.chop(sequence)
@@ -80,7 +82,7 @@ function shrink (sequence) {
     sequence = sortAxisChunk(sequence)
     sequence = removeQuadruplets(sequence)
     var newLength = sequence.length
-  } while (oldLength != newLength);
+  } while (oldLength !== newLength)
   return sequence
 }
 
@@ -94,7 +96,7 @@ function removeQuadruplets (sequence) {
 
 function sortAxisChunk (sequence) {
   var chunked = sequence.match(/[RLMxrl]+|[UDEyud]+|[FBSzfb]+/g)
-  if (chunked == null) return ''
+  if (chunked === null) return ''
   return chunked
     .map(chunk => chunk.split('').sort(compareFace).join(''))
     .join('')
@@ -103,7 +105,7 @@ function sortAxisChunk (sequence) {
 var FACE_ORDER = {
   R: 0, L: 1, M: 2, x: 3, r: 4, l: 5,
   U: 0, D: 1, E: 2, y: 3, u: 4, d: 5,
-  F: 0, B: 1, S: 2, z: 3, f: 4, b: 5,
+  F: 0, B: 1, S: 2, z: 3, f: 4, b: 5
 }
 
 function compareFace (a, b) {
