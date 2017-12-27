@@ -1,5 +1,7 @@
 **/*.pegjs
 .eslintignore
 .eslintrc
+.travis.yml
+jest.config.js
 /tests/
 /coverage/

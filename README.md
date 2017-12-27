@@ -1,9 +1,9 @@
 # cube-notation-normalizer
 [![Build Status](https://travis-ci.org/Zahajki/cube-notation-normalizer.svg?branch=master)](https://travis-ci.org/Zahajki/cube-notation-normalizer)
 [![Coverage Status](https://coveralls.io/repos/github/Zahajki/cube-notation-normalizer/badge.svg?branch=master)](https://coveralls.io/github/Zahajki/cube-notation-normalizer?branch=master)
-[![npm version](https://badge.fury.io/js/cube-notation-normalizer.svg)](https://badge.fury.io/js/cube-notation-normalizer)
+[![npm](https://img.shields.io/npm/v/cube-notation-normalizer.svg)](https://www.npmjs.com/package/cube-notation-normalizer)
 
-There are several number of rubik's cube related programs on npm, and many of them has their own functions to parse algorithms. Unfortunately, their functions only support limited syntax of algorithm notation.
+There are several number of rubik's cube related programs on npm, and many of them has their own functions to parse algorithms. Mostly their functions support only limited syntax of algorithm notation unfortunately.
 
 This library intends to be a base for this kind of programs to support broad syntax of algorithm notation.
 
@@ -24,7 +24,7 @@ const ugly = "(rU R' U`) (r' FRF' )  ";
 normalize(ugly);
 // => "r U R' U' r' F R F'"
 
-// machine-friendly format
+// program-friendly format
 normalize(ugly, {
   separator: '',
   useModifiers: false,
@@ -134,7 +134,7 @@ normalize("R' U2", { useModifiers: false });
 ```
 
 ##### uniformCenterMoves
-If `'rotation'` or `'slice'`, turns with center moves (`M`, `x`, `r`, etc.) are converted and unified to rotation moves (`x`, `y` and `z`) or slice moves (`M`, `E` and `S`). (default `false`)
+If `'rotation'` or `'slice'`, the turns with center moves (`M`, `x`, `r`, etc.) are converted and unified to rotation moves (`x`, `y` and `z`) or slice moves (`M`, `E` and `S`). (default `false`)
 ```js
 normalize("r E", { uniformCenterMoves: 'rotation' });
 // => "L' x U D' y'"

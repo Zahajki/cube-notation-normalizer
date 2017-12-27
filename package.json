@@ -1,6 +1,6 @@
 {
   "name": "cube-notation-normalizer",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Parse and \"normalize\" Rubik's Cube algorithm notations",
   "main": "index.js",
   "types": "types/index.d.ts",
@@ -9,7 +9,7 @@
     "prepublish": "npm run build",
     "build": "pegjs notation.pegjs",
     "test": "jest",
-    "cover": "jest --coverage",
+    "test:cover": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "author": "Zahajki",
@@ -39,5 +39,6 @@
   },
   "dependencies": {
     "lodash": "^4.17.4"
-  }
+  },
+  "runkitExample": "const normalize = require('cube-notation-normalizer')"
 }
