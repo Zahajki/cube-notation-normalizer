@@ -41,11 +41,8 @@ If you prefer, you also can choose `x`, `y` and `z` instead of `M`, `E` and `S`.
 ```js
 // supported face letters:
 normalize("R U F L D B M E S x y z");
-// => "R U F L D B M E S r u f l d b x y z"
-```
+// => "R U F L D B M E S x y z"
 
-#### Double layer turns
-```js
 // 'w' notation is normalized to lowercase
 normalize("r Uw");
 // => "r u"
